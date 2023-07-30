@@ -95,18 +95,22 @@
         <section class="row my-5">
           <div class="page-header">
             <h2>Relevant Cases</h2>
-            <ul class="case-list">
-              {{#each relevantCases}}
-                <li>
-                  <h3>
-                    <a href="{{this.url}}" target="_blank">
-                      {{this.title}}
-                    </a>
-                    <p><em>{{this.summary}}</em></p>
-                  </h3>
-                </li>
-              {{/each}}
-            </ul>
+            {{#if relevantCases}}
+              <ul class="case-list">
+                {{#each relevantCases}}
+                  <li>
+                    <h3>
+                      <a href="{{this.url}}" target="_blank">
+                        {{this.title}}
+                      </a>
+                      <p><em>{{this.summary}}</em></p>
+                    </h3>
+                  </li>
+                {{/each}}
+              </ul>
+            {{else}}
+              <p>No relevant cases found.</p>
+            {{/if}}
           </div>
         </section>
 
@@ -130,6 +134,13 @@
         </section>
 
       </div>
-    {{/each}}
-  {{/if}}
+    </div>
+  {{/each}}
+{{/if}}
 </template>
+
+
+
+
+
+
